@@ -3,6 +3,9 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
+ARG VITE_BACKEND_URL=http://localhost:9000
+ENV VITE_BACKEND_URL=$VITE_BACKEND_URL
+
 COPY package*.json ./
 RUN npm install
 

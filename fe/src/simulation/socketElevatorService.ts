@@ -18,7 +18,7 @@ export class SocketElevatorService implements ElevatorService {
   constructor(backendUrl?: string) {
     this.backendUrl =
       backendUrl ??
-      import.meta.env.VITE_BACKEND_URL ?? "http://localhost:3000";
+      import.meta.env.VITE_BACKEND_URL ?? "http://localhost:9000";
     this.snapshot = {
       tick: 0,
       running: true,

@@ -7,9 +7,9 @@ services:
       dockerfile: Dockerfile
     container_name: elevator-backend
     ports:
-      - "3000:3000"
+      - "9000:9000"
     environment:
-      - PORT=3000
+      - PORT=9000
     restart: unless-stopped
     networks:
       - elevator-network
@@ -18,11 +18,13 @@ services:
     build:
       context: ./fe
       dockerfile: Dockerfile
+      args:
+        VITE_BACKEND_URL: ${VITE_BACKEND_URL:-http://localhost:9000}
     container_name: elevator-frontend
     ports:
       - "5173:80"
-    depends_on:
-      - backend
+    environment:
+      - VITE_BACKEND_URL=${VITE_BACKEND_URL:-http://localhost:9000}
     restart: unless-stopped
     networks:
       - elevator-network
