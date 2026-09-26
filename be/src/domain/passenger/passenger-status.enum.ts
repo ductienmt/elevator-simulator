@@ -1,0 +1,7 @@
+export enum PassengerStatus {
+  WAITING = 'WAITING',
+  BOARDING = 'BOARDING',
+  INSIDE = 'INSIDE',
+  ARRIVING = 'ARRIVING',
+  COMPLETED = 'COMPLETED',
+}
