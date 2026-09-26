@@ -52,7 +52,7 @@ async function bootstrap() {
   SwaggerModule.setup('api/docs', app, document, swaggerSetupOptions);
   SwaggerModule.setup('docs', app, document, swaggerSetupOptions);
 
-  await app.listen(port);
+  await app.listen(port, '0.0.0.0');
   logger.log(`Elevator Simulator Backend is running on: http://localhost:${port}`);
   logger.log(`Swagger UI is available on: http://localhost:${port}/api/docs`);
   logger.log(`Swagger UI is also available on: http://localhost:${port}/docs`);
